@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      AppSistencia
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card style="text-align: center;">
+    <ion-card-header>
+      <ion-card-title>Login</ion-card-title>
+      <ion-card-subtitle></ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content style="align-items: center;">
+      
+      <div style="text-align: center;">
+        <ion-icon name="person-circle" size="large"></ion-icon>
+        <p>Ingrese sus datos para iniciar sesión</p>
+
+        <br>  
+
+        <ion-button [routerLink]="['/login']" color="success">Login</ion-button> 
+
+        <br>  
+
+        <ion-button color="medium">Registrarse</ion-button>
+      </div>
+
+
+    </ion-card-content>
+  </ion-card>
+
+  <div id="container">
+    <strong>Ready to create a CHAMBA?</strong>
+    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  </div>
+</ion-content>
