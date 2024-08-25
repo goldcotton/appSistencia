@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { LoginPage } from './login.page';
+import { PerfilPage } from './perfil.page';
 
 const routes: Routes = [
   {
-    // aqui se asigna la ruta de la pagina como ruta de login login/'nombre_asignado'
     path: '',
-    component: LoginPage
+    component: PerfilPage
   }
 ];
 
@@ -15,4 +14,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class LoginPageRoutingModule {}
+export class PerfilPageRoutingModule {}

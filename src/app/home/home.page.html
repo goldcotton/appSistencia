@@ -1,45 +1,47 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+
     <ion-title>
-      AppSistencia
+      Home
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
+    <!-- barra superior para iOS -->
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Home</ion-title>
     </ion-toolbar>
+
   </ion-header>
 
-  <ion-card style="text-align: center;">
-    <ion-card-header>
-      <ion-card-title>Login</ion-card-title>
-      <ion-card-subtitle></ion-card-subtitle>
-    </ion-card-header>
+  <div class="content-center">
+
+    <ion-card>
+      <ion-card-header>
+
+        <div style="text-align: center;">
+
+          <ion-card-title>Hola</ion-card-title>
+          <br>
+          <ion-icon name="person-circle" size="large"></ion-icon>
+          <br><br>
+          <ion-card-subtitle>Bienvenido a appSistencia</ion-card-subtitle>
+          <br>
+        </div>
+
+      </ion-card-header>
+    
+      <ion-card-content style="align-items: center;">
+        
+        <div style="text-align: center;">
+          <ion-button [routerLink]="['/login']" expand="block" color="success">Asiste aqui</ion-button> 
+        </div>
   
-    <ion-card-content style="align-items: center;">
-      
-      <div style="text-align: center;">
-        <ion-icon name="person-circle" size="large"></ion-icon>
-        <p>Ingrese sus datos para iniciar sesión</p>
+      </ion-card-content>
+    </ion-card>
 
-        <br>  
-
-        <ion-button [routerLink]="['/login']" color="success">Login</ion-button> 
-
-        <br>  
-
-        <ion-button color="medium">Registrarse</ion-button>
-      </div>
-
-
-    </ion-card-content>
-  </ion-card>
-
-  <div id="container">
-    <strong>Ready to create a CHAMBA?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
   </div>
+
 </ion-content>
