@@ -3,19 +3,14 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    
+
     <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true"> <!-- aqui comienzan los contenidos de la app -->
 
-  <ion-header collapse="condense">
-    <!-- barra superior para iOS -->
-    <ion-toolbar>
-      <ion-title size="large">Login</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  
 
   <div class="flex-center">
 
@@ -43,16 +38,18 @@
           <ion-input label="Contraseña" type="password" label-placement="floating" fill="outline" placeholder="Ingrese su contraseña"></ion-input>
   
           <br>
-          <ion-button [routerLink]="['/perfil']" expand="block" color="success">Ingresar</ion-button> 
+          <ion-button [routerLink]="['/alumno']" expand="block" color="success">Ingresar</ion-button> 
   
           <ion-button fill="clear" expand="block" color="medium">Olvide mi contraseña</ion-button>
           <br>  
   
-          <ion-button [routerLink]="['/home']" expand="block" color="danger">Volver al home</ion-button><!--navegar al directorio /home-->
+          <!--  
+          <ion-button [routerLink]="['/home']" expand="block" color="danger">Volver al home</ion-button> <-!--navegar al directorio /home--|>
 
           <ion-button (click)='navegar()' expand="block">Al home</ion-button> 
-          <!-- luego del click activa la funcion navegar que redirige al directorio /home usando typescript en la pagina nombre_pagina.page.ts -->
+          <-!-- luego del click activa la funcion navegar que redirige al directorio /home usando typescript en la pagina nombre_pagina.page.ts --|>
   
+          -->
         </div>
   
   
