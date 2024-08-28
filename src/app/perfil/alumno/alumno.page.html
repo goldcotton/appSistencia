@@ -27,4 +27,43 @@
     </ion-item>
 
   </ion-list>
+
+  <ion-card>
+    <ion-card-header>
+
+      <div style="text-align: center;">
+
+        <ion-card-title>Escanea el codigo QR</ion-card-title>
+        <br>
+
+        <qrcode
+
+        [qrdata]="qrCodeString" 
+        [width]="256" 
+        [errorCorrectionLevel]="'M'">
+
+        </qrcode>
+
+      </div>
+
+    </ion-card-header>
+  
+    <ion-card-content style="align-items: center;">
+      
+      <div style="text-align: center;">
+        <ion-button 
+          expand="block" 
+          color="primary"
+          (click)="startScan()">Comenzar
+
+        </ion-button> 
+      </div>
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-item>
+    <ion-label class="ion-text-wrap">Resultado de escaneo: {{scannedResult}} </ion-label>
+  </ion-item>
+
 </ion-content>

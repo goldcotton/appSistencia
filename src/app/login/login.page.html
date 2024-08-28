@@ -29,16 +29,17 @@
     
       <ion-card-content >
         
-        <div >
-  
-          <ion-input label="Usuario" type="user" label-placement="floating" fill="outline" placeholder="Ingrese el nombre de usuario"></ion-input>
+          <form [formGroup]="usuario">
+            <ion-input formControlName="user" label="Usuario" type="user" label-placement="floating" fill="outline" placeholder="Ingrese el nombre de usuario"></ion-input>
+    
+            <br>
+    
+            <ion-input formControlName="pass" label="Contraseña" type="password" label-placement="floating" fill="outline" placeholder="Ingrese su contraseña"></ion-input>
+
+          </form>
   
           <br>
-  
-          <ion-input label="Contraseña" type="password" label-placement="floating" fill="outline" placeholder="Ingrese su contraseña"></ion-input>
-  
-          <br>
-          <ion-button [routerLink]="['/alumno']" expand="block" color="success">Ingresar</ion-button> 
+          <ion-button (click)='navegarExtras()' expand="block" color="success">Ingresar</ion-button> 
   
           <ion-button fill="clear" expand="block" color="medium">Olvide mi contraseña</ion-button>
           <br>  
@@ -50,9 +51,7 @@
           <-!-- luego del click activa la funcion navegar que redirige al directorio /home usando typescript en la pagina nombre_pagina.page.ts --|>
   
           -->
-        </div>
-  
-  
+      
       </ion-card-content>
     </ion-card>
 
