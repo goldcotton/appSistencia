@@ -16,12 +16,12 @@ export class AlumnoPage implements OnInit {
   constructor(private activeroute: ActivatedRoute, private router: Router) {
 
     this.activeroute.queryParams.subscribe(params => {
-      console.log( this.router.getCurrentNavigation()?.extras.state?.['user']);
-      console.log(this.router.getCurrentNavigation()?.extras.state?.['id']);
+      console.log( this.router.getCurrentNavigation()?.extras.state?.['id']);
+      console.log(this.router.getCurrentNavigation()?.extras.state?.['user']);
   
     });
   
-   }
+  }
 
   ngOnInit() {
   }

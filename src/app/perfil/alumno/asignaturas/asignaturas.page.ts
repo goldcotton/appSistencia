@@ -1,3 +1,4 @@
+import { query } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -8,12 +9,17 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class AsignaturasPage implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private activeroute: ActivatedRoute, private router: Router) {
+
+    
+  }
 
   ngOnInit() {
   }
 
   nextPageAsignaturas(){
+
+
     this.router.navigate(['alumno/asistencias']);
   }
 
