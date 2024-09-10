@@ -4,6 +4,9 @@ import { NavigationExtras } from '@angular/router' ;
 import { RouterModule } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
+import { LoadingController } from '@ionic/angular';
+//import { AuthenticationService } from '../../services/authentication.service';
+
 
 @Component({
   selector: 'app-login',
@@ -41,15 +44,24 @@ export class LoginPage implements OnInit {
      state: {
   
       id: this.usuario.value.user,
-  
       user: this.usuario.value.pass
   
      }
   
     };
 
-  
-    this.router.navigate(['/alumno'],setData);
+    if(this.usuario.value.user?.includes('@alumno.cl') && this.usuario.value.pass == 'alumno'){
+      //this.router.navigate(['/admin'],setData);
+
+      this.router.navigate(['/alumno'],setData);
+    }
+
+    if(this.usuario.value.user?.includes('@alumno.cl') && this.usuario.value.pass == 'alumno'){
+      //this.router.navigate(['/admin'],setData);
+
+      this.router.navigate(['/alumno'],setData);
+    }
+    
   
    }
   

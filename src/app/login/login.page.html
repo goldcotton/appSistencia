@@ -30,16 +30,17 @@
       <ion-card-content >
         
           <form [formGroup]="usuario">
-            <ion-input formControlName="user" label="Usuario" type="user" label-placement="floating" fill="outline" placeholder="Ingrese el nombre de usuario"></ion-input>
+            <ion-input formControlName="user" label="Correo" type="email" label-placement="floating" fill="outline" placeholder="Ingrese su correo electronico"></ion-input>
     
             <br>
     
             <ion-input formControlName="pass" label="Contraseña" type="password" label-placement="floating" fill="outline" placeholder="Ingrese su contraseña"></ion-input>
 
+            <br>
+            <ion-button type="submit" (click)='navegarExtras()' expand="block" color="success">Ingresar</ion-button>
           </form>
   
-          <br>
-          <ion-button (click)='navegarExtras()' expand="block" color="success">Ingresar</ion-button> 
+          
   
           <ion-button fill="clear" expand="block" color="medium">Olvide mi contraseña</ion-button>
           <br>  

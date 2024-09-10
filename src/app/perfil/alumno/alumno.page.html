@@ -10,8 +10,6 @@
 
 <ion-content>
 
-  
-
   <ion-list>
     <ion-item>
 
@@ -21,6 +19,7 @@
 
       <ion-label>
         <h1>Luis Mario Acevedo Sanchez</h1>
+        <h1></h1>
         <p><span class="date">25/08/2024</span></p>
       </ion-label>
 
@@ -59,8 +58,25 @@
         </ion-button> 
       </div>
 
+      <br>
+
+      <div >
+
+        <ion-button style="text-align: center;"
+          expand="block" 
+          color="medium"
+          (click)="nextPageAsignaturas()">Ver asistencias
+    
+        </ion-button> 
+      </div>
+
     </ion-card-content>
+
+    
+
   </ion-card>
+
+  
 
   <ion-item>
     <ion-label class="ion-text-wrap">Resultado de escaneo: {{scannedResult}} </ion-label>

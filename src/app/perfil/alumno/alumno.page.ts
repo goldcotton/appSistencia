@@ -16,9 +16,7 @@ export class AlumnoPage implements OnInit {
   constructor(private activeroute: ActivatedRoute, private router: Router) {
 
     this.activeroute.queryParams.subscribe(params => {
-  
       console.log( this.router.getCurrentNavigation()?.extras.state?.['user']);
-  
       console.log(this.router.getCurrentNavigation()?.extras.state?.['id']);
   
     });
@@ -30,6 +28,11 @@ export class AlumnoPage implements OnInit {
 
   startScan(){
     console.log("Scan");
+
+  }
+
+  nextPageAsignaturas(){
+    this.router.navigate(['alumno/asignaturas']);
   }
 
 }

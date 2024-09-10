@@ -7,7 +7,15 @@ const routes: Routes = [
   {
     path: '',
     component: AlumnoPage
+  },  {
+    path: 'asistencias',
+    loadChildren: () => import('./asistencias/asistencias.module').then( m => m.AsistenciasPageModule)
+  },
+  {
+    path: 'asignaturas',
+    loadChildren: () => import('./asignaturas/asignaturas.module').then( m => m.AsignaturasPageModule)
   }
+
 ];
 
 @NgModule({
