@@ -1,0 +1,58 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Perfil Docente</ion-title>
+
+    <ion-progress-bar color="secondary" type="determinate" ></ion-progress-bar>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <ion-item color="primary">
+
+    <ion-label style="text-align: center;">
+      <h1>ASIGNATURAS</h1>
+      <h1></h1>
+      <p></p>
+    </ion-label>
+
+  </ion-item>
+ 
+  <ion-list [inset]="true">
+
+    <ion-item >
+      
+      <span type="button" (click)="nextPageListado()"> 
+      <ion-label >
+        <h1>Algoritmos</h1>
+
+        <p>APYMNAV_404T</p>
+      </ion-label>
+      
+      </span>
+
+      <ion-icon type="button" (click)="nextPageListado()" color="primary" slot="start" name="list-circle" size="large">Lista</ion-icon>
+      
+      <ion-icon type="button" (click)="nextPageQR()" color="primary" slot="end" name="qr-code-outline" size="large"> </ion-icon>
+      
+    </ion-item>
+
+    <ion-item [button]="true">
+      <ion-icon color="tertiary" slot="start" name="list-circle" size="large"></ion-icon>
+      <ion-label>Shopping</ion-label>
+      <ion-note slot="end">15</ion-note>
+    </ion-item>
+    <ion-item [button]="true">
+      <ion-icon color="success" slot="start" name="list-circle" size="large"></ion-icon>
+      <ion-label>Cleaning</ion-label>
+      <ion-note slot="end">3</ion-note>
+    </ion-item>
+    <ion-item [button]="true">
+      <ion-icon color="warning" slot="start" name="list-circle" size="large"></ion-icon>
+      <ion-label>Reminders</ion-label>
+      <ion-note slot="end">8</ion-note>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

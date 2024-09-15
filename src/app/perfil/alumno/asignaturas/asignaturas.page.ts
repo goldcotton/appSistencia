@@ -1,6 +1,6 @@
 import { query } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 
 @Component({
   selector: 'app-asignaturas',
@@ -8,6 +8,8 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./asignaturas.page.scss'],
 })
 export class AsignaturasPage implements OnInit {
+
+  estadisticaDesc = "Estadistica Descriptiva"
 
   constructor(private activeroute: ActivatedRoute, private router: Router) {
 
@@ -19,8 +21,17 @@ export class AsignaturasPage implements OnInit {
 
   nextPageAsignaturas(){
 
+    let setData: NavigationExtras = {
+  
+      state: {
+   
+       id: this.estadisticaDesc,
+   
+      }
+   
+     };
 
-    this.router.navigate(['alumno/asistencias']);
+    this.router.navigate(['alumno/asistencias'],setData);
   }
 
 

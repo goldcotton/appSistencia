@@ -8,17 +8,23 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class AsistenciasPage implements OnInit {
 
+  tituloAsig = ""
+
   constructor(private activeroute: ActivatedRoute, private router: Router) {
 
     this.activeroute.queryParams.subscribe(params => {
-      console.log( this.router.getCurrentNavigation()?.extras.state?.['id']);
+      this.tituloAsig = this.router.getCurrentNavigation()?.extras.state?.['id'];
       console.log(this.router.getCurrentNavigation()?.extras.state?.['user']);
   
     });
+
+    
   
   }
 
   ngOnInit() {
+
+
   }
 
 }
