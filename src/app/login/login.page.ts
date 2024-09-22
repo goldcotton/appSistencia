@@ -38,14 +38,14 @@ export class LoginPage implements OnInit {
       this.router.navigate(['/alumno'],navigationExtras);
   }
 
-  navegarExtras(){
+  navegarExtras(){ //Funcion para navegar a la pagina perfil alump con datos a traspasar a la pagina destino (alumno)
 
-    let setData: NavigationExtras = {
+    let setData: NavigationExtras = { //Variable para enviar datos a otra pagina
   
-     state: {
+     state: { //Estructura de los datos a enviar
   
-      id: this.usuario.value.user,
-      user: this.usuario.value.pass
+      id: this.usuario.value.user, // formControlName: 'user'
+      user: this.usuario.value.pass // formControlName: 'pass'
   
      }
   
@@ -67,8 +67,8 @@ export class LoginPage implements OnInit {
 
    }
 
-   async presentAlert(titulo: string,subTit: string, mensj: string) {
-    const alert = await this.alertController.create({
+   async presentAlert(titulo: string,subTit: string, mensj: string) { //Funcion para mostrar un mensaje de alerta
+    const alert = await this.alertController.create({ // estructura para mostrar un mensaje de alerta
       header: titulo,
       subHeader: subTit,
       message: mensj,

@@ -29,6 +29,7 @@ export class DocentePage implements OnInit {
    
      };
 
+    this.router.getCurrentNavigation()?.extras.state?.['asig']
     this.router.navigate(['docente/listado']);
   }
 

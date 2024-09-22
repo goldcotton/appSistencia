@@ -15,50 +15,38 @@
   <ion-item color="primary">
 
     <ion-label style="text-align: center;">
-      <h1>{{tituloAsig}}</h1>
+      <h1 id="asig">{{tituloAsig}}</h1>
       <h1></h1>
       <p></p>
     </ion-label>
 
   </ion-item>
 
+    <ion-list>
 
-  <ion-list>
-    
-    <ion-grid >
-      <ion-row class="flex-center">
-        <ion-col class="flex-center">
-          <ion-label> Fechas
-            
-            <div class="flex-center">
-            <h1>MAR 10/11/2024</h1>
-          </div>
+      <ion-item>
+        <ion-label> Fecha </ion-label>
+        <ion-label id="asis" slot="end"> Asistencia </ion-label>
 
-          <div class="flex-center">
-            <h1>MIE 11/11/2024</h1>
-          </div>
-          </ion-label>
-        </ion-col>
-        
-        <ion-col class="flex-center">
-          <ion-label > Asistencia
-            <div class="flex-center">
-            <h1>Presente</h1>
-          </div>
+      </ion-item>
 
-          <div class="flex-center">
-            <h1>Ausente</h1>
-          </div>
-          </ion-label>
-        </ion-col>
+      <ion-item>
+        <ion-label><h1>12/10/2024</h1></ion-label>
+        <ion-label id="asis" slot="end"><h1>Presente</h1></ion-label>
+      </ion-item>
 
-      </ion-row>
+      <ion-item>
+        <ion-label><h1>13/10/2024</h1></ion-label>
+        <ion-label id="asis" slot="end"><h1>Presente</h1></ion-label>
+      </ion-item>
 
-    </ion-grid>
+      <ion-item>
+        <ion-label><h1>19/10/2024</h1></ion-label>
+        <ion-label id="asis" slot="end"><h1>Ausente</h1></ion-label>
+      </ion-item>
 
-  </ion-list>
+
+    </ion-list>
 
   
-
-
 </ion-content>

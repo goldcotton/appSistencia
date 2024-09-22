@@ -31,7 +31,8 @@
         <ion-label>
           <h1>{{estadisticaDesc}}</h1>
           <h1></h1>
-          <p><span class="number">100%</span></p>
+          <p><span class="number">ESTYD4113</span></p>
+          <p><span class="number" (click)=" pocentajeAsistencia()">100% {{porcAsis}}</span></p>
         </ion-label>
 
       </ion-item>
@@ -60,7 +61,7 @@
 
         <ion-label>
           <h1 >Etica</h1>
-          <h1></h1>
+          <h1 id="asig">{{asignatura.etica}}</h1>
           <p><span class="number">100%</span></p>
         </ion-label>
 

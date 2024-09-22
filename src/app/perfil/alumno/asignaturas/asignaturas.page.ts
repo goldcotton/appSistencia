@@ -11,12 +11,19 @@ export class AsignaturasPage implements OnInit {
 
   estadisticaDesc = "Estadistica Descriptiva"
 
+  asignatura = {"estadistica": "Estadistica Descriptiva", "etica": "Etica Laboral", "algebra": "Algebra", "algoritmos": "Programacion de algoritmos"}
+
+  porcAsis = 0
+
   constructor(private activeroute: ActivatedRoute, private router: Router) {
 
     
   }
 
   ngOnInit() {
+
+
+
   }
 
   nextPageAsignaturas(){
@@ -25,7 +32,7 @@ export class AsignaturasPage implements OnInit {
   
       state: {
    
-       id: this.estadisticaDesc,
+       aig: this.asignatura,
    
       }
    
@@ -34,5 +41,21 @@ export class AsignaturasPage implements OnInit {
     this.router.navigate(['alumno/asistencias'],setData);
   }
 
+  pocentajeAsistencia(){
+    //incompleto
+    this.porcAsis = 100
+
+    const element = document.getElementById('asis');
+    if (element) {
+      const totalClasses = parseInt(element.getAttribute('data-total-classes') || '0', 10);
+      const attendedClasses = parseInt(element.getAttribute('data-attended-classes') || '0', 10);
+      if (totalClasses > 0) {
+        this.porcAsis = (attendedClasses / totalClasses) * 100;
+      }
+    }
+
+    return this.porcAsis
+
+  }
 
 }

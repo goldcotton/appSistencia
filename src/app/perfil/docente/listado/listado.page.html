@@ -1,6 +1,13 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
     <ion-title>listado</ion-title>
+
+    
   </ion-toolbar>
 </ion-header>
 
@@ -14,10 +21,18 @@
     </ion-label>
 
   </ion-item>
+
   <ion-list>
     <ion-item>
-      <ion-label>Nombre</ion-label>
-      <ion-checkbox slot="end"></ion-checkbox>
+      <ion-label>Nombre de alumno</ion-label>
+      <ion-checkbox slot="end"> Presente</ion-checkbox>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Nombre de alumno 2</ion-label>
+      <ion-label slot="end">Presente</ion-label>
     </ion-item>
   </ion-list>
 
