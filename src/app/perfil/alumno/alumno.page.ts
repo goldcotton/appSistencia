@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
+
 
 
 @Component({
@@ -9,9 +10,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class AlumnoPage implements OnInit {
 
-  qrCodeString = 'Ejemplo de odigo QR de asistencia'; //Variable para guardar el codigo QR
+  qrCodeString = 'Ejemplo de odigo QR de asistencia'; //Variable para guardar el texto del codigo QR
 
   scannedResult: any; //Variable para guardar el resultado del escaneo
+  //incompleto
 
   constructor(private activeroute: ActivatedRoute, private router: Router) {
 
@@ -26,12 +28,15 @@ export class AlumnoPage implements OnInit {
   ngOnInit() {
   }
 
-  startScan(){
+  startScan(){ //Funcion para escanear el codigo QR
+
+    //incompleto
     console.log("Scan");
 
   }
 
-  nextPageAsignaturas(){
+  nextPageAsignaturas(){ //Funcion para ir a la pagina de asignaturas
+
     this.router.navigate(['alumno/asignaturas']);
   }
 

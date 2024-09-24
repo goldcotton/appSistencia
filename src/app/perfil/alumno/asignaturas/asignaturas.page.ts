@@ -9,9 +9,9 @@ import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 })
 export class AsignaturasPage implements OnInit {
 
-  estadisticaDesc = "Estadistica Descriptiva"
+  estadisticaDesc = "Estadistica Descriptiva" //Variable de prueba para asignatura de estadistica
 
-  asignatura = {"estadistica": "Estadistica Descriptiva", "etica": "Etica Laboral", "algebra": "Algebra", "algoritmos": "Programacion de algoritmos"}
+  asignatura = {"estadistica": "Estadistica Descriptiva", "etica": "Etica Laboral", "algebra": "Algebra", "algoritmos": "Programacion de algoritmos"} //Asignaturas disponibles para el alumno en un arreglo
 
   porcAsis = 0
 
@@ -22,30 +22,30 @@ export class AsignaturasPage implements OnInit {
 
   ngOnInit() {
 
-
-
   }
 
-  nextPageAsignaturas(){
+  nextPageAsignaturas(asignaturaSeleccionada: string){ //Funcion para enviar la asignatura seleccionada a la siguiente pagina
 
-    let setData: NavigationExtras = {
+    let setData: NavigationExtras = { //Se envia la asignatura seleccionada a la siguiente pagina
   
       state: {
    
-       aig: this.asignatura,
+       asig: asignaturaSeleccionada, //Se envia la asignatura seleccionada por id(asig) del html
    
       }
    
      };
 
-    this.router.navigate(['alumno/asistencias'],setData);
+    this.router.navigate(['alumno/asistencias'],setData); //Se envia la asignatura seleccionada a la siguiente pagina
   }
 
-  pocentajeAsistencia(){
-    //incompleto
+  pocentajeAsistencia(){ //Funcion para calcular el porcentaje de asistencia del alumno
+
+    //INCOMPLETO
     this.porcAsis = 100
 
     const element = document.getElementById('asis');
+
     if (element) {
       const totalClasses = parseInt(element.getAttribute('data-total-classes') || '0', 10);
       const attendedClasses = parseInt(element.getAttribute('data-attended-classes') || '0', 10);

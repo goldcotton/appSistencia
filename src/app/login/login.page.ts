@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { NavigationExtras } from '@angular/router' ;
+import { NavigationExtras, ActivatedRoute } from '@angular/router' ;
 import { RouterModule } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AlertController } from '@ionic/angular';
@@ -57,7 +57,7 @@ export class LoginPage implements OnInit {
       this.router.navigate(['/alumno'],setData);
 
     }else if(this.usuario.value.user?.includes('@docente.cl') && this.usuario.value.pass == 'docente'){
-      //this.router.navigate(['/admin'],setData);
+      //this.router.navigate(['/admin'],setData); //Se envia a la pagina de admin
 
       this.router.navigate(['/docente'],setData);
     }else{
@@ -75,7 +75,7 @@ export class LoginPage implements OnInit {
       buttons: ['Aceptar'],
     });
 
-    await alert.present();
+    await alert.present(); //Se muestra el mensaje de alerta
   }
   
 

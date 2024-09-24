@@ -8,13 +8,16 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class AsistenciasPage implements OnInit {
 
-  tituloAsig = ""
+  tituloAsig = "" //Variable para guardar el titulo de la asignatura seleccionada
 
-  constructor(private activeroute: ActivatedRoute, private router: Router) {
+  constructor(private activeroute: ActivatedRoute, private router: Router) { //Se recibe la asignatura seleccionada de la pagina anterior
+
+    //intento de recibir la asignatura seleccionada
 
     this.activeroute.queryParams.subscribe(params => {
-      this.tituloAsig = this.router.getCurrentNavigation()?.extras.state?.['id'];
-      console.log(this.router.getCurrentNavigation()?.extras.state?.['user']);
+      this.tituloAsig = this.router.getCurrentNavigation()?.extras.state?.['asig'];
+      
+      console.log(this.router.getCurrentNavigation()?.extras.state?.['asig']);
   
     });
 
