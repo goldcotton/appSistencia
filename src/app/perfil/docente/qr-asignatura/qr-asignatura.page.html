@@ -1,0 +1,61 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>QR Asistencia</ion-title>
+
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-item color="primary">
+
+    <ion-label style="text-align: center;">
+      <h1 id="tituloAsig">{{tituloAsigDoc}}</h1>
+      <h2 id="tituloSeccion">{{tituloSiglDoc}} - {{fechaHoy}}</h2>
+      <p></p>
+    </ion-label>
+
+  </ion-item>
+
+  
+
+  <ion-card>
+    <ion-card-header>
+
+      <div style="text-align: center;">
+
+        <ion-card-title>Escanea el codigo QR</ion-card-title>
+        <br>
+
+        <qrcode
+
+        [qrdata]="qrCodeString" 
+        [width]="256" 
+        [errorCorrectionLevel]="'M'">
+
+        </qrcode>
+
+      </div>
+
+    </ion-card-header>
+  
+    <ion-card-content style="align-items: center;">
+
+        <ion-button style="text-align: center;"
+          expand="block" 
+          color="primary"
+          (click)="nextPageListado(tituloAsigDoc)">Ver diligentes
+    
+        </ion-button> 
+
+    </ion-card-content>
+
+    
+
+  </ion-card>
+
+</ion-content>

@@ -23,36 +23,29 @@
 
     <ion-item >
       
-      <span type="button" (click)="nextPageListado()"> 
+      <span type="button" (click)="nextPageListado(asignatura.algoritmos)"> 
       <ion-label >
-        <h1>Algoritmos</h1>
+        <h2>{{asignatura.algoritmos}}</h2>
 
-        <p>APYMNAV_404T</p>
+        <p>{{sigla.algoritmos}}{{seccion.diurno2}}</p>
       </ion-label>
-      
       </span>
 
-      <ion-icon type="button" (click)="nextPageListado()" color="primary" slot="start" name="list-circle" size="large">Lista</ion-icon>
-      
-      <ion-icon type="button" (click)="nextPageQR()" color="primary" slot="end" name="qr-code-outline" size="large"> </ion-icon>
-      
+      <ion-icon type="button" (click)="nextPageListado(asignatura.algoritmos)" color="primary" slot="start" name="list-circle" size="large">Lista</ion-icon>
+  
+      <ion-icon type="button" (click)="nextPageQR(asignatura.algoritmos, sigla.algoritmos, seccion.diurno2)" color="primary" slot="end" name="qr-code-outline" size="large"> </ion-icon>
     </ion-item>
 
-    <ion-item [button]="true">
+    <ion-item>
       <ion-icon color="tertiary" slot="start" name="list-circle" size="large"></ion-icon>
-      <ion-label>Shopping</ion-label>
-      <ion-note slot="end">15</ion-note>
+      <ion-label (click)="nextPageListado(asignatura.estadistica)">{{asignatura.estadistica}}
+        <p>{{sigla.estadistica}}{{seccion.diurno2}}</p>
+      </ion-label>
+      
+      <ion-icon type="button" (click)="nextPageQR(asignatura.estadistica, sigla.estadistica, seccion.diurno2)" color="primary" slot="end" name="qr-code-outline" size="large"> </ion-icon>
+      <ion-note slot="end"></ion-note>
     </ion-item>
-    <ion-item [button]="true">
-      <ion-icon color="success" slot="start" name="list-circle" size="large"></ion-icon>
-      <ion-label>Cleaning</ion-label>
-      <ion-note slot="end">3</ion-note>
-    </ion-item>
-    <ion-item [button]="true">
-      <ion-icon color="warning" slot="start" name="list-circle" size="large"></ion-icon>
-      <ion-label>Reminders</ion-label>
-      <ion-note slot="end">8</ion-note>
-    </ion-item>
+
   </ion-list>
 
 </ion-content>

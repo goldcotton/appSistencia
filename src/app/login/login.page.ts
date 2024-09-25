@@ -62,7 +62,7 @@ export class LoginPage implements OnInit {
       this.router.navigate(['/docente'],setData);
     }else{
 
-      this.presentAlert("Usuario Invalido","Ingrese un correo o contraseña valida","");
+      this.presentAlert("Usuario Invalido","Ingrese un correo o contraseña valida",""); //Se muestra un mensaje de alerta con el titulo, subtitulo y mensaje como parametro de entrada
     }
 
    }

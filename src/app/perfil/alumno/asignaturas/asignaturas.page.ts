@@ -9,9 +9,11 @@ import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 })
 export class AsignaturasPage implements OnInit {
 
-  estadisticaDesc = "Estadistica Descriptiva" //Variable de prueba para asignatura de estadistica
+  asignatura = {"estadistica": "Estadistica Descriptiva", "etica": "Etica Laboral", "algebra": "Algebra y trigonometria", "algoritmos": "Programacion de algoritmos"} //Asignaturas disponibles para el alumno en un arreglo
 
-  asignatura = {"estadistica": "Estadistica Descriptiva", "etica": "Etica Laboral", "algebra": "Algebra", "algoritmos": "Programacion de algoritmos"} //Asignaturas disponibles para el alumno en un arreglo
+  sigla = {"estadistica": "EST", "etica": "ETI", "algebra": "ALG", "algoritmos": "ALG"} //Siglas de las asignaturas disponibles para el alumno en un arreglo
+
+  seccion = {"diurno1": "100", "diurno2": "200", "vespertino1": "300", "vespertino2": "400"} //Secciones de las asignaturas disponibles para el alumno en un arreglo
 
   porcAsis = 0
 

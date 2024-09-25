@@ -2,20 +2,21 @@
   <ion-toolbar>
 
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-back-button (click)="goBackPerfilDocente()"></ion-back-button>
     </ion-buttons>
 
     <ion-title>listado</ion-title>
 
     
   </ion-toolbar>
+  
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-item color="primary">
 
     <ion-label style="text-align: center;">
-      <h1></h1>
+      <h1 id="asig">{{tituloAsigDoc}}</h1>
       <h1></h1>
       <p></p>
     </ion-label>
@@ -23,16 +24,10 @@
   </ion-item>
 
   <ion-list>
-    <ion-item>
-      <ion-label>Nombre de alumno</ion-label>
-      <ion-checkbox slot="end"> Presente</ion-checkbox>
-    </ion-item>
-  </ion-list>
-
-  <ion-list>
-    <ion-item>
-      <ion-label>Nombre de alumno 2</ion-label>
-      <ion-label slot="end">Presente</ion-label>
+    <!-- Usamos *ngFor para recorrer y mostrar los alumnos -->
+    <ion-item *ngFor="let alumno of objAlumnos">
+      <ion-label>{{alumno}}</ion-label>
+      <ion-checkbox checked="true" slot="end">Presente</ion-checkbox>
     </ion-item>
   </ion-list>
 
