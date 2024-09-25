@@ -18,7 +18,7 @@ export class LoginPage implements OnInit {
 
   constructor(private router: Router, private alertController: AlertController) { }
 
-  usuario = new FormGroup({
+  usuario = new FormGroup({ //Variable para guardar los datos del usuario en un formulario reactivo (formGroup) con sus respectivas validaciones
 
     user: new FormControl('',[Validators.required, Validators.minLength(4),Validators.maxLength(20)]),
   
@@ -35,7 +35,7 @@ export class LoginPage implements OnInit {
     let navigationExtras: NavigationExtras = {
       state: {user: this.usuario}
       };
-      this.router.navigate(['/alumno'],navigationExtras);
+      this.router.navigate(['/alumno'],navigationExtras); //se envia el formulario con los datos del usuario a la pagina de alumno
   }
 
   navegarExtras(){ //Funcion para navegar a la pagina perfil alump con datos a traspasar a la pagina destino (alumno)
