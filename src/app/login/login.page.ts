@@ -4,7 +4,7 @@ import { NavigationExtras, ActivatedRoute } from '@angular/router' ;
 import { RouterModule } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AlertController } from '@ionic/angular';
-
+import { AuthserviceService } from '../service/authservice.service';
 import { LoadingController } from '@ionic/angular';
 //import { AuthenticationService } from '../../services/authentication.service';
 
@@ -16,7 +16,7 @@ import { LoadingController } from '@ionic/angular';
 })
 export class LoginPage implements OnInit {
 
-  constructor(private router: Router, private alertController: AlertController) { }
+  constructor(private authService:AuthserviceService,private router: Router, private alertController: AlertController) { }
 
   usuario = new FormGroup({ //Variable para guardar los datos del usuario en un formulario reactivo (formGroup) con sus respectivas validaciones
 
@@ -51,18 +51,27 @@ export class LoginPage implements OnInit {
   
     };
 
-    if(this.usuario.value.user?.includes('@alumno.cl') && this.usuario.value.pass == 'alumno'){
-      //this.router.navigate(['/admin'],setData);
+    try{
 
-      this.router.navigate(['/alumno'],setData);
+      if(this.usuario.value.user?.includes('@alumno.cl') && this.usuario.value.pass == 'alumno'){
+        //this.router.navigate(['/admin'],setData);
+  
+        this.authService.login(); //Se loguea al usuario alumno
+        this.router.navigate(['/alumno'],setData);
+  
+      }else if(this.usuario.value.user?.includes('@docente.cl') && this.usuario.value.pass == 'docente'){
+        //this.router.navigate(['/admin'],setData); //Se envia a la pagina de admin
+  
+        this.authService.login(); //Se loguea al usuario dccente
+        this.router.navigate(['/docente'],setData);
+      }else{
+  
+        this.presentAlert("Usuario Invalido","Ingrese un correo o contraseña valida",""); //Se muestra un mensaje de alerta con el titulo, subtitulo y mensaje como parametro de entrada
+      }
 
-    }else if(this.usuario.value.user?.includes('@docente.cl') && this.usuario.value.pass == 'docente'){
-      //this.router.navigate(['/admin'],setData); //Se envia a la pagina de admin
-
-      this.router.navigate(['/docente'],setData);
-    }else{
-
-      this.presentAlert("Usuario Invalido","Ingrese un correo o contraseña valida",""); //Se muestra un mensaje de alerta con el titulo, subtitulo y mensaje como parametro de entrada
+    }catch(error:any){
+      console.log("Error al navegar a la pagina de perfil");
+      this.presentAlert("Error de login","",""); 
     }
 
    }

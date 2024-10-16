@@ -25,14 +25,16 @@ const routes: Routes = [
   
   {
     path: 'alumno',
-    loadChildren: () => import('./perfil/alumno/alumno.module').then( m => m.AlumnoPageModule)
+    loadChildren: () => import('./perfil/alumno/alumno.module').then( m => m.AlumnoPageModule),
+    canActivate: [guardGuard] // Protege la ruta alumno para que solo pueda ser accedida por un usuario logueado
   },
   {
     path: 'docente',
-    loadChildren: () => import('./perfil/docente/docente.module').then( m => m.DocentePageModule)
+    loadChildren: () => import('./perfil/docente/docente.module').then( m => m.DocentePageModule),
+    canActivate: [guardGuard] // Protege la ruta docente para que solo pueda ser accedida por un usuario logueado
   },
   {
-    path: '**',
+    path: '**', // Wildcard route for a 404 page not found
     loadChildren: () => import('./page-notfound/page-notfound.module').then( m => m.PageNotfoundPageModule)
   },
 ];
